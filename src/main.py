@@ -1,14 +1,7 @@
+from config import CACHE_FILE, CLIENT_ID
 import os
-from dotenv import load_dotenv
 import requests
-from pathlib import Path
 from msal import PublicClientApplication, SerializableTokenCache
-
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-CACHE_FILE = PROJECT_ROOT / "token_cache.json"
-
-load_dotenv()
-CLIENT_ID = os.environ["APPLICATION_CLIENT_ID"]
 
 cache = SerializableTokenCache()
 if os.path.exists(CACHE_FILE):
