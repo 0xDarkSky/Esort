@@ -1,4 +1,4 @@
-from config import CACHE_FILE, CLIENT_ID
+from config import CACHE_FILE, CLIENT_ID, SCOPES
 import os
 import requests
 from msal import PublicClientApplication, SerializableTokenCache
@@ -17,10 +17,10 @@ result = None
 accounts = app.get_accounts()
 if accounts:
     chosen = accounts[0]
-    result = app.acquire_token_silent(["User.Read"], account=chosen)
+    result = app.acquire_token_silent(SCOPES, account=chosen)
 
-if not result:
-    result = app.acquire_token_interactive(scopes=["User.Read"])
+if not result or "access_token" not in result:
+    result = app.acquire_token_interactive(scopes=SCOPES)
 if "access_token" in result:
     access_token = result["access_token"]
     if cache.has_state_changed:
