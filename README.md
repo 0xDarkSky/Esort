@@ -1,2 +1,10 @@
 # Esort
-Email sorter for email systems.
+The proper way to sort your emails.
+
+Work in progress...
+
+[+] Get access token
+[+] Cache access token
+[+] Read emails
+[+] SQL schema for collected data
+
