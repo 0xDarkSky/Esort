@@ -1,0 +1,6 @@
+TODO.md
+.env
+.venv
+token_cache.json
+
+__pycache__/
