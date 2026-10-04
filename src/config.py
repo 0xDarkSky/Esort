@@ -9,3 +9,4 @@ GRAPH_BASE_URL = "https://graph.microsoft.com/v1.0"
 
 load_dotenv()
 CLIENT_ID = os.environ["APPLICATION_CLIENT_ID"]
+
